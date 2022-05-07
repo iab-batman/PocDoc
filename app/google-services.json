@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "625037913873",
+    "firebase_url": "https://pocdoc-42948-default-rtdb.firebaseio.com",
+    "project_id": "pocdoc-42948",
+    "storage_bucket": "pocdoc-42948.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:625037913873:android:95bc6b914f1529e958e6b0",
+        "android_client_info": {
+          "package_name": "com.example.pocdoc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "625037913873-jauqs56c6imbg5v5plspcbh54ghjrq0h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD73mFDnE8lL3eCo-ZmoQq4x9zFVvkys7M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "625037913873-jauqs56c6imbg5v5plspcbh54ghjrq0h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
