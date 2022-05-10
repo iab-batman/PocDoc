@@ -4,8 +4,92 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".MainActivity">
 
+    <EditText
+        android:id="@+id/TextEmailAddress"
+        android:layout_width="268dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="292dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="393dp"
+        android:ems="10"
+        android:autofillHints="Email Address"
+        android:hint="Email"
+        android:textFontWeight="200"
+        android:textColorHint="@color/blue_pocdoc"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/TextPassword"
+        android:layout_width="265dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="79dp"
+        android:autofillHints="password"
+        android:hint="Password"
+        android:textFontWeight="200"
+        android:textColorHint="@color/blue_pocdoc"
+        android:layout_marginBottom="328dp"
+        android:ems="10"
+        android:inputType="textPassword"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextEmailAddress" />
+
+    <Button
+        android:id="@+id/signin_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="157dp"
+        android:layout_marginBottom="26dp"
+        android:backgroundTint="@color/orange_pocdoc"
+        android:textColor="@color/blue_pocdoc"
+        android:text="Sign In"
+        android:textFontWeight="200"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextPassword" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="177dp"
+        android:layout_marginBottom="211dp"
+        android:text="Don't have an account? Register now"
+        android:textColor="@color/blue_pocdoc"
+        android:textFontWeight="300"
+        android:elevation="35dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signin_btn" />
+
+    <ImageView
+        android:id="@+id/signin_logo_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="7dp"
+        app:layout_constraintBottom_toTopOf="@+id/TextEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pocdoc_logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
