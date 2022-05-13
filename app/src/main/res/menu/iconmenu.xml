@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menu_home"
+        android:icon="@drawable/home_"
+        android:title="Home"/>
+
+    <item android:id="@+id/menu_call"
+        android:icon="@drawable/call_"
+        android:title="Call"/>
+
+    <item android:id="@+id/menu_account"
+        android:icon="@drawable/account_"
+        android:title="Account"/>
+
+    <item android:id="@+id/menu_support"
+        android:icon="@drawable/ic_baseline_support_24"
+        android:title="Customer Support"/>
+
+
+    <item android:id="@+id/menu_settings"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="Settings"/>
+
+</menu>
