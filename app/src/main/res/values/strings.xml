@@ -1,11 +1,5 @@
 <resources>
-    <string name="app_name">PocDoc</string>
-    <string name="open">Open</string>
-
-    <string name="close">Close</string>
-    <string name="title_activity_bottomnavbar">activity_bottomnavbar</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-
+    <string name="app_name">ModernLogin</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
 </resources>
