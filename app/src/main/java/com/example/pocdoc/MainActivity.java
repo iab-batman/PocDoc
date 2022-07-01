@@ -1,24 +1,33 @@
 package com.example.pocdoc;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import androidx.appcompat.widget.Toolbar;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 
+
 public class MainActivity extends AppCompatActivity {
+    Toolbar toolbar;
+    ActionBarDrawerToggle toggle;
+    DrawerLayout drawerLayout;
+    NavigationView nav;
     EditText emailid, password;
     Button Signin_btn;
     TextView Signin_tv;
@@ -30,6 +39,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        drawerLayout=findViewById(R.id.drawer);
+        nav=findViewById(R.id.navmenu);
+        toolbar=findViewById(R.id.toolbar);
+
+        setSupportActionBar(toolbar);
+
+        ActionBarDrawerToggle toggle=new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open,R.string.close);
+
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         emailid = findViewById(R.id.TextEmailAddress);
@@ -39,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
 
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
+
+
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
                 if (mFirebaseUser != null){
