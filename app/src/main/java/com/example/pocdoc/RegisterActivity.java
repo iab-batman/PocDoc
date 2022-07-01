@@ -20,6 +20,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     EditText emailid, phone, name, password;
     Button Register_btn;
+    TextView Back2signin;
     FirebaseAuth mFirebaseAuth;
 
 
@@ -35,6 +36,15 @@ public class RegisterActivity extends AppCompatActivity {
         name = findViewById(R.id.register_name_text);
         phone = findViewById(R.id.register_phonenum);
         password = findViewById(R.id.register_password_text);
+
+        Back2signin = findViewById(R.id.back_to_sign_in_btn);
+        Back2signin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent ToSignin = new Intent(RegisterActivity.this,MainActivity.class);
+                startActivity(ToSignin);
+            }
+        });
 
         Register_btn = findViewById(R.id.Reg_btn);
 

@@ -101,4 +101,16 @@
         app:layout_constraintStart_toStartOf="@+id/register_heading"
         app:layout_constraintTop_toBottomOf="@+id/register_password_text" />
 
+    <TextView
+        android:id="@+id/back_to_sign_in_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Go Back"
+        android:textColor="@color/blue_pocdoc"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="@+id/Reg_btn"
+        app:layout_constraintStart_toStartOf="@+id/Reg_btn"
+        app:layout_constraintTop_toBottomOf="@+id/Reg_btn" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
