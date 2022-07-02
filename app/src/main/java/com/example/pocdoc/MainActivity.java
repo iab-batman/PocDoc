@@ -37,15 +37,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.nav_activity_main);
 
-        drawerLayout=findViewById(R.id.drawer);
-        nav=findViewById(R.id.navmenu);
+        drawerLayout=findViewById(R.id.drawer_layout);
+        nav=findViewById(R.id.nav_view);
         toolbar=findViewById(R.id.toolbar);
 
         setSupportActionBar(toolbar);
 
-        ActionBarDrawerToggle toggle=new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open,R.string.close);
+        ActionBarDrawerToggle toggle=new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
 
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
