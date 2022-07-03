@@ -11,11 +11,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.pocdoc.databinding.ActivityRegisterBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -23,15 +25,18 @@ public class MainActivity extends AppCompatActivity {
     Button Signin_btn;
     TextView Signin_tv;
     FirebaseAuth mFirebaseAuth;
+    ActivityRegisterBinding binding;
+    FirebaseDatabase database;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        binding= ActivityRegisterBinding.inflate(getLayoutInflater());
 
         mFirebaseAuth = FirebaseAuth.getInstance();
+        database= FirebaseDatabase.getInstance();
         emailid = findViewById(R.id.TextEmailAddress);
         password = findViewById(R.id.TextPassword);
         Signin_tv = findViewById(R.id.Register_text);
