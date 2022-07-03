@@ -14,7 +14,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PocDoc">
-
+        <activity
+            android:name=".Nurse_bot"
+            android:exported="false" />
+        <activity
+            android:name=".Pill_timer"
+            android:exported="false" />
+        <activity
+            android:name=".AccountActivity"
+            android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -26,13 +34,13 @@
              project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
              "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
         -->
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="${MAPS_API_KEY}" />
-
-        <activity android:name=".MapsActivity"
+        <!-- <meta-data -->
+        <!-- android:name="com.google.android.geo.API_KEY" -->
+        <!-- android:value="${MAPS_API_KEY}" /> -->
+        <activity
+            android:name=".MapsActivity"
             android:exported="false"
-            android:label="Maps"></activity>
+            android:label="Maps" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

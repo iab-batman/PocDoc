@@ -36,37 +36,13 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Arrays;*/
 import java.util.Objects;
 
-
-public class HomeActivity extends AppCompatActivity {
-    private DatabaseReference databaseReference = null;
-    private Location mLocation;
-    private LocationListener locationListener;
-    private LocationManager locationManager;
-
-    private Toolbar toolbar;
-
-
-
-
-    private final long MIN_TIME = 1000;
-    private final long MIN_DIST = 5;
-
-
-
-    Button Logout_btn, Map_Btn ;
-    ClipData.Item menu_nav, account;
-    FirebaseAuth mFirebaseAuth;
+public class AccountActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
-    private DrawerLayout drawerLayout;
-    private ActionBarDrawerToggle toggle;
-    private NavigationView navigationView;
-
-    private FirebaseAuth.AuthStateListener mAuthStateListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_account);
         bottomNavigationView = findViewById(R.id.bottom_navigator);
         bottomNavigationView.setSelectedItemId(R.id.navigation_home);
 
@@ -76,6 +52,8 @@ public class HomeActivity extends AppCompatActivity {
 
                 switch (item.getItemId()) {
                     case R.id.navigation_home:
+                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_pill_timer:
                         startActivity(new Intent(getApplicationContext(),Pill_timer.class));
@@ -90,8 +68,6 @@ public class HomeActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_account:
-                        startActivity(new Intent(getApplicationContext(),AccountActivity.class));
-                        overridePendingTransition(0,0);
                         return true;
 
                 }
@@ -100,42 +76,6 @@ public class HomeActivity extends AppCompatActivity {
 
 
         });
-
-
-
-
-
-       //Logout_btn = findViewById(R.id.logout_btn);
-        //Logout_btn.setOnClickListener(new View.OnClickListener() {
-          //  @Override
-            //public void onClick(View view) {
-              //  FirebaseAuth.getInstance().signOut();
-
-                //Intent InToMain = new Intent(HomeActivity.this,MainActivity.class);
-                //startActivity(InToMain);
-            //}
-
-        //});
-        /* Map_Btn = findViewById(R.id.map_btn);
-        Map_Btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent InToMap = new Intent(HomeActivity.this, MapsActivity.class);
-                startActivity(InToMap);
-            }
-        });
-*/
-
-
-
-
-        ActivityCompat.requestPermissions(HomeActivity.this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION}, PackageManager.PERMISSION_GRANTED);
-
-
-
-//                double longitude = mLocation.getLongitude();
-//                double latitude = mLocation.getLatitude();
-//                lc.writeLocation(databaseReference,latitude, longitude);
-
     }
 }
+
