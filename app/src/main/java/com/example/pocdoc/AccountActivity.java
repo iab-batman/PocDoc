@@ -60,7 +60,7 @@ public class AccountActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_covid_tracker:
-                        startActivity(new Intent(getApplicationContext(),MapsActivity.class));
+                        startActivity(new Intent(getApplicationContext(),CovidExposureTracker.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_nurse_bot:
