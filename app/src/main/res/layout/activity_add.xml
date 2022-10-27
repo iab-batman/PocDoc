@@ -6,49 +6,70 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Add">
+
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true">
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
         <ImageView
-            android:scaleType="centerCrop"
-            android:src="@drawable/addp"
+            android:id="@+id/dp"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:id="@+id/dp"/>
+            android:scaleType="centerCrop"
+            android:src="@drawable/addp" />
+
         <EditText
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:hint="Enter Medicine Name"
-            android:layout_margin="10dp"
-            android:textColor="@color/orange_pocdoc"
-            android:id="@+id/name"/>
+            android:textColor="@color/orange_pocdoc" />
+
         <EditText
 
+            android:id="@+id/num"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:hint="Enter Timings"
-            android:textColor="@color/orange_pocdoc"
-            android:layout_margin="10dp"
-            android:id="@+id/num"/>
-        <EditText
+            android:textColor="@color/orange_pocdoc" />
+        <Spinner
+            android:id="@+id/dropdowntime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Address"
-            android:textColor="@color/orange_pocdoc"
+            android:spinnerMode="dropdown"
+            />
 
+        <EditText
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:id="@+id/address"/>
+
+            android:hint="Enter Address"
+            android:textColor="@color/orange_pocdoc" />
+        <Spinner
+            android:id="@+id/dropdownalarmrepeat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"/>
+
         <Button
-            android:layout_gravity="center"
+            android:id="@+id/save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Save"
+            android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:id="@+id/save"/>
+            android:text="Save" />
+
+
+
+
     </LinearLayout>
 
 

@@ -31,6 +31,9 @@ public class MyDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+//        if(i1>i){
+//            sqLiteDatabase.execSQL("ALTER TABLE cotacts ADD COLUMN _ADDR TEXT NOT NULL");
+//        }
         sqLiteDatabase.execSQL(DROPE_CONTACTS_TABLE);
         onCreate(sqLiteDatabase);
 

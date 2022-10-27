@@ -31,8 +31,8 @@ public class Pill_Timer1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pill_timer1);
         rv=findViewById(R.id.rv);
-//        bottomNavigationView.setSelectedItemId(R.id.navigation_pill_timer);
-//        bottomNavigationView = findViewById(R.id.bottom_navigator);
+       // bottomNavigationView.setSelectedItemId(R.id.navigation_pill_timer);
+       // bottomNavigationView = findViewById(R.id.bottom_navigator);
         add=findViewById(R.id.add);
 //        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
 //            @Override
