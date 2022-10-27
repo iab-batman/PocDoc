@@ -19,12 +19,6 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp">
 
-        <ImageView
-            android:id="@+id/imageMenu"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            tools:layout_editor_absoluteX="-6dp"
-            tools:layout_editor_absoluteY="16dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -42,23 +36,7 @@
             app:menu="@menu/bottom_nav_menu"
             tools:layout_editor_absoluteX="0dp" />
 
-    <ImageView
-        android:layout_width="138dp"
-        android:layout_height="121dp"
-        android:layout_margin="8dp"
-        android:padding="8dp"
-        android:src="@drawable/hospital"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="110dp" />
 
-    <ImageView
-        android:layout_width="190dp"
-        android:layout_height="123dp"
-        android:layout_margin="8dp"
-        android:padding="8dp"
-        android:src="@drawable/drug"
-        tools:layout_editor_absoluteX="192dp"
-        tools:layout_editor_absoluteY="108dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

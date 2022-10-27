@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PocDoc">
         <activity
+            android:name=".CovidExposureTracker"
+            android:exported="false" />
+        <activity
             android:name=".Nurse_bot"
             android:exported="false" />
         <activity
@@ -40,19 +43,19 @@
         <!-- android:name="com.google.android.geo.API_KEY" -->
         <!-- android:value="${MAPS_API_KEY}" /> -->
         <activity
-            android:name=".MapsActivity"
-            android:exported="false"
-            android:label="Maps" />
-        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="PocDoc">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
+
         <activity
             android:name=".HomeActivity"
             android:exported="false" />
@@ -62,6 +65,11 @@
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
+
+        <service android:name=".LocationService"
+            android:exported="true"/>
+
+
     </application>
 
 </manifest>
