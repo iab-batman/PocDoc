@@ -14,6 +14,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -22,6 +23,8 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import android.os.Bundle;
 import android.widget.Button;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -33,7 +36,7 @@ public class CovidExposureTracker extends AppCompatActivity {
 
     LocationService mLocationService = new LocationService();
     Intent mServiceIntent;
-
+    BottomNavigationView bottomNavigationView;
     Button startServiceBtn, stopServiceBtn;
 
     @Override
@@ -45,6 +48,39 @@ public class CovidExposureTracker extends AppCompatActivity {
         stopServiceBtn = findViewById(R.id.stop_service_btn);
 
         /**************/
+
+        bottomNavigationView = findViewById(R.id.bottom_navigator);
+        bottomNavigationView.setSelectedItemId(R.id.navigation_home);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()) {
+                    case R.id.navigation_home:
+                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.navigation_pill_timer:
+                        startActivity(new Intent(getApplicationContext(),Add.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.navigation_covid_tracker:
+                        return true;
+                    case R.id.navigation_nurse_bot:
+                        startActivity(new Intent(getApplicationContext(),Nurse_bot.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.navigation_account:
+                        startActivity(new Intent(getApplicationContext(),AccountActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                }
+                return false;
+            }
+
+
+        });
 
         startServiceBtn.setOnClickListener( new View.OnClickListener() {
             @Override

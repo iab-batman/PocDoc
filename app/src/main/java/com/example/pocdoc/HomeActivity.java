@@ -53,7 +53,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
 
-    Button Logout_btn, Map_Btn ;
+    Button Logout_btn, Map_Btn,pilltimerbtn ;
     ClipData.Item menu_nav, account;
     FirebaseAuth mFirebaseAuth;
     BottomNavigationView bottomNavigationView;
@@ -68,7 +68,16 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         bottomNavigationView = findViewById(R.id.bottom_navigator);
+        pilltimerbtn = findViewById(R.id.pilltimerbtn);
         bottomNavigationView.setSelectedItemId(R.id.navigation_home);
+
+        pilltimerbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(HomeActivity.this,Pill_Timer1.class);
+                startActivity(intent);
+            }
+        });
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -78,7 +87,7 @@ public class HomeActivity extends AppCompatActivity {
                     case R.id.navigation_home:
                         return true;
                     case R.id.navigation_pill_timer:
-                        startActivity(new Intent(getApplicationContext(),Pill_timer.class));
+                        startActivity(new Intent(getApplicationContext(),Add.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_covid_tracker:

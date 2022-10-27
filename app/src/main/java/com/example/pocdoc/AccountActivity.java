@@ -44,7 +44,7 @@ public class AccountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
         bottomNavigationView = findViewById(R.id.bottom_navigator);
-        bottomNavigationView.setSelectedItemId(R.id.navigation_home);
+        bottomNavigationView.setSelectedItemId(R.id.navigation_account);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -56,7 +56,7 @@ public class AccountActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_pill_timer:
-                        startActivity(new Intent(getApplicationContext(),Pill_timer.class));
+                        startActivity(new Intent(getApplicationContext(),Add.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_covid_tracker:

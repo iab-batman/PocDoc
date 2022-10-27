@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.CAMERA"></uses-permission>
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:name=".ApplicationClass"
@@ -17,14 +17,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PocDoc">
         <activity
+            android:name=".Add"
+            android:exported="false" />
+        <activity
             android:name=".CovidExposureTracker"
             android:exported="false" />
         <activity
             android:name=".Nurse_bot"
             android:exported="false" />
-        <activity
-            android:name=".Pill_timer"
-            android:exported="false" />
+
+        <activity android:name=".Pill_Timer1"
+            android:exported="false"/>
         <activity
             android:name=".AccountActivity"
             android:exported="false" />
@@ -46,16 +49,12 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="PocDoc">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
-
         <activity
             android:name=".HomeActivity"
             android:exported="false" />
@@ -66,10 +65,9 @@
             android:name=".LoginActivity"
             android:exported="false" />
 
-        <service android:name=".LocationService"
-            android:exported="true"/>
-
-
+        <service
+            android:name=".LocationService"
+            android:exported="true" />
     </application>
 
 </manifest>
