@@ -6,26 +6,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import android.os.Bundle;
-import android.widget.Button;
-
-import java.io.File;
-import java.io.FileWriter;
-
 public class CovidExposureTracker extends AppCompatActivity {
 
     private static int MY_FINE_LOCATION_REQUEST = 99;
@@ -206,24 +197,6 @@ public class CovidExposureTracker extends AppCompatActivity {
     private void requestFineLocationPermission() {
         ActivityCompat.requestPermissions(this,  new String[]{Manifest.permission.ACCESS_FINE_LOCATION,}, MY_FINE_LOCATION_REQUEST);
     }
-
-//    public void saveLocation(){
-//        File dir = new File(this.getFilesDir(), "trickyworld");
-//        if(!dir.exists()){
-//            dir.mkdir();
-//        }
-//
-//        try {
-//            File userLocation = new File(dir, "userlocation.txt");
-//            FileWriter writer = new FileWriter(userLocation);
-//            writer.append(LocationService.locationArrayList.toString());
-//            writer.flush();
-//            writer.close();
-//            LocationService.locationArrayList.clear();
-//        } catch (Exception e){
-//            e.printStackTrace();
-//        }
-//    }
 
 
 }

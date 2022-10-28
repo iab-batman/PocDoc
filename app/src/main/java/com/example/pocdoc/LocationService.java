@@ -12,6 +12,7 @@ import android.location.Location;
 import android.os.Build;
 import android.os.IBinder;
 import android.os.Looper;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -32,6 +33,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+
 
 
 public class LocationService extends Service {
@@ -41,6 +44,7 @@ public class LocationService extends Service {
 
     FusedLocationProviderClient fusedLocationClient;
     LocationRequest locationRequest;
+    public static final int UPDATE_INTERVAL = 30000;
     FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
     DatabaseReference root =firebaseDatabase.getReference().child("location");
     LocationCallback locationCallback;
@@ -60,13 +64,17 @@ public class LocationService extends Service {
                 locationCallback,
                 Looper.getMainLooper());
     }
+//    private void initArea() {
+//
+//
+//    }
 
-    protected void createLocationRequest() {
-        LocationRequest locationRequest = LocationRequest.create();
-        locationRequest.setInterval(30000);
-//        locationRequest.setFastestInterval(5000);
-        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-    }
+//    protected void createLocationRequest() {
+//        LocationRequest locationRequest = LocationRequest.create();
+//        locationRequest.setInterval(30000);
+////        locationRequest.setFastestInterval(5000);
+//        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+//    }
 
     @Override
     public void onCreate() {
@@ -84,7 +92,7 @@ public class LocationService extends Service {
 
         locationRequest = LocationRequest.create();
 //        locationRequest.setFastestInterval(3000);
-        locationRequest.setInterval(30000);
+        locationRequest.setInterval(UPDATE_INTERVAL);
 //        locationRequest.setMaxWaitTime(5000);
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
 
@@ -102,7 +110,37 @@ public class LocationService extends Service {
                         "Long: " + Double.toString(location.getLongitude()), Toast.LENGTH_SHORT).show();
 
                 locationArrayList.add(new LatLng(location.getLatitude(), location.getLongitude()));
+                double a = location.getLatitude();
+                double b = location.getLongitude();
 
+//                ArrayList<Object> dangerousArea = new ArrayList<>();
+//                dangerousArea.add(new LatLng(26.720126,94.156374));
+//                dangerousArea.add(new LatLng(26.722673,94.195730));
+//                dangerousArea.add(new LatLng(26.735694,94.223904));
+//
+//                locationArrayList.retainAll(dangerousArea);
+
+//                Location.distanceBetween(location.getLatitude(),location.getLongitude(),33.6563001,73.0130935,result);
+
+                Location locationA = new Location("point A");
+
+                locationA.setLatitude(a);
+                locationA.setLongitude(b);
+
+                Location locationB = new Location("point B");
+
+                locationB.setLatitude(33.6563001);
+                locationB.setLongitude(73.0130935);
+
+                float[] results = new float[1];
+                Location.distanceBetween(a,b,33.6563001,73.0130935,results);
+                float distance = results[0];
+
+                if (distance<5000){
+                    Toast.makeText(LocationService.this, "You are in danger Zone", Toast.LENGTH_SHORT).show();
+                }
+
+                Toast.makeText(LocationService.this,String.valueOf(distance), Toast.LENGTH_SHORT).show();
 
 
                 FirebaseDatabase.getInstance().getReference("Current location").setValue(locationArrayList).addOnCompleteListener(new OnCompleteListener<Void>() {
