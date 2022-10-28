@@ -32,8 +32,13 @@
         <entry key="..\:/Users/Hooriya/StudioProjects/PocDoc96/app/src/main/res/menu/drawer_menu.xml" value="0.2" />
         <entry key="..\:/Users/Hooriya/StudioProjects/PocDoc96/app/src/main/res/menu/navigation_drawer.xml" value="0.2" />
         <entry key="..\:/Users/US/AndroidStudioProjects/PocDoc/app/src/main/res/drawable-v24/button_background_blue.xml" value="0.1" />
+        <entry key="..\:/Users/US/AndroidStudioProjects/PocDoc/app/src/main/res/drawable/add.xml" value="0.1" />
+        <entry key="..\:/Users/US/AndroidStudioProjects/PocDoc/app/src/main/res/drawable/addp.xml" value="0.1" />
         <entry key="..\:/Users/US/AndroidStudioProjects/PocDoc/app/src/main/res/drawable/ic_google_logo.xml" value="0.1" />
         <entry key="..\:/Users/US/AndroidStudioProjects/PocDoc/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1875" />
+        <entry key="..\:/Users/US/AndroidStudioProjects/PocDoc/app/src/main/res/layout/activity_account.xml" value="0.1" />
+        <entry key="..\:/Users/US/AndroidStudioProjects/PocDoc/app/src/main/res/layout/activity_add.xml" value="0.2384428223844282" />
+        <entry key="..\:/Users/US/AndroidStudioProjects/PocDoc/app/src/main/res/layout/activity_bottomnavbar.xml" value="0.1" />
         <entry key="..\:/Users/US/AndroidStudioProjects/PocDoc/app/src/main/res/layout/activity_covid_exposure_tracker.xml" value="0.15" />
         <entry key="..\:/Users/US/AndroidStudioProjects/PocDoc/app/src/main/res/layout/activity_home.xml" value="0.14764492753623187" />
         <entry key="..\:/Users/US/AndroidStudioProjects/PocDoc/app/src/main/res/layout/activity_login.xml" value="0.17916666666666667" />
@@ -43,7 +48,10 @@
         <entry key="..\:/Users/US/AndroidStudioProjects/PocDoc/app/src/main/res/layout/activity_maps.xml" value="0.1" />
         <entry key="..\:/Users/US/AndroidStudioProjects/PocDoc/app/src/main/res/layout/activity_nurse_bot.xml" value="0.1" />
         <entry key="..\:/Users/US/AndroidStudioProjects/PocDoc/app/src/main/res/layout/activity_pill_timer.xml" value="0.1" />
+        <entry key="..\:/Users/US/AndroidStudioProjects/PocDoc/app/src/main/res/layout/activity_pill_timer1.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/US/AndroidStudioProjects/PocDoc/app/src/main/res/layout/activity_pill_timer_1.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/US/AndroidStudioProjects/PocDoc/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/Users/US/AndroidStudioProjects/PocDoc/app/src/main/res/layout/row.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/US/AndroidStudioProjects/PocDoc/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
         <entry key="..\:/Users/US/AndroidStudioProjects/PocDoc/app/src/main/res/menu/drawer_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/zes/AndroidStudioProjects/PocDoc/app/src/main/res/drawable-v24/ic_add_img.xml" value="0.1265" />

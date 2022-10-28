@@ -21,4 +21,18 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string-array name="TimeDropDownMenu">
+        <item>1 time</item>
+        <item>2 times</item>
+        <item>3 times</item>
+    </string-array>
+    <string-array name="AlarmRepeatDropDown">
+        <item>1 Day</item>
+        <item>2 Days</item>
+        <item>3 Days</item>
+        <item>4 Days</item>
+        <item>5 Days</item>
+        <item>6 Days</item>
+        <item>7 Days</item>
+    </string-array>
 </resources>

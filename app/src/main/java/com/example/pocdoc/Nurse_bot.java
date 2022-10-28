@@ -31,7 +31,7 @@ public class Nurse_bot extends AppCompatActivity {
                         return true;
 
                     case R.id.navigation_pill_timer:
-                        startActivity(new Intent(getApplicationContext(), Pill_timer.class));
+                        startActivity(new Intent(getApplicationContext(), Add.class));
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.navigation_covid_tracker:
