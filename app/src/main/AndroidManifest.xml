@@ -20,6 +20,15 @@
             android:name=".CovidExposureTracker"
             android:exported="false" />
         <activity
+            android:name=".Splash_Activity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".Nurse_bot"
             android:exported="false" />
         <activity android:name=".AlarmActivity"/>
@@ -46,13 +55,9 @@
         <!-- android:value="${MAPS_API_KEY}" /> -->
         <activity
             android:name=".MainActivity"
-            android:exported="true"
+            android:exported="false"
             android:label="PocDoc">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".HomeActivity"

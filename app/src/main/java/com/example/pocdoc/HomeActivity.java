@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
@@ -43,6 +44,7 @@ public class HomeActivity extends AppCompatActivity {
     private LocationListener locationListener;
     private LocationManager locationManager;
 
+    ImageView chatbot,timer,tracker;
     private Toolbar toolbar;
 
 
@@ -53,7 +55,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
 
-    Button Logout_btn, Map_Btn,pilltimerbtn ;
+    Button Logout_btn, Map_Btn ;
     ClipData.Item menu_nav, account;
     FirebaseAuth mFirebaseAuth;
     BottomNavigationView bottomNavigationView;
@@ -67,50 +69,30 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        pilltimerbtn = findViewById(R.id.pilltimerbtn);
-
-        pilltimerbtn.setOnClickListener(new View.OnClickListener() {
+        timer=findViewById(R.id.pilltimerbtn);
+        tracker=findViewById(R.id.tracker);
+        chatbot=findViewById(R.id.chatBot);
+        chatbot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(HomeActivity.this,Pill_Timer1.class);
-                startActivity(intent);
+                Intent i=new Intent(HomeActivity.this,Nurse_bot.class);
+                startActivity(i);
             }
         });
-
-        bottomNavigationView = findViewById(R.id.bottom_navigator);
-        bottomNavigationView.setSelectedItemId(R.id.navigation_home);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        tracker.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                switch (item.getItemId()) {
-                    case R.id.navigation_home:
-                        return true;
-                    case R.id.navigation_pill_timer:
-                        startActivity(new Intent(getApplicationContext(),AlarmActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.navigation_covid_tracker:
-                        startActivity(new Intent(getApplicationContext(),CovidExposureTracker.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.navigation_nurse_bot:
-                        startActivity(new Intent(getApplicationContext(),Add.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.navigation_account:
-                        startActivity(new Intent(getApplicationContext(),AccountActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                }
-                return false;
+            public void onClick(View view) {
+                Intent i=new Intent(HomeActivity.this,CovidExposureTracker.class);
+                startActivity(i);
             }
-
-
         });
-
-
+        timer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(HomeActivity.this,Pill_Timer1.class);
+                startActivity(i);
+            }
+        });
 
 
 
