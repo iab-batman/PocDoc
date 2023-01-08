@@ -136,11 +136,15 @@ public class LocationService extends Service {
                 Location.distanceBetween(a,b,33.6563001,73.0130935,results);
                 float distance = results[0];
 
-                if (distance<5000){
+                if (distance<500){
                     Toast.makeText(LocationService.this, "You are in danger Zone", Toast.LENGTH_SHORT).show();
                 }
+                else{
+                    Toast.makeText(LocationService.this, "You are not in danger Zone", Toast.LENGTH_SHORT).show();
 
-                Toast.makeText(LocationService.this,String.valueOf(distance), Toast.LENGTH_SHORT).show();
+                }
+
+                //Toast.makeText(LocationService.this,String.valueOf(distance), Toast.LENGTH_SHORT).show();
 
 
                 FirebaseDatabase.getInstance().getReference("Current location").setValue(locationArrayList).addOnCompleteListener(new OnCompleteListener<Void>() {

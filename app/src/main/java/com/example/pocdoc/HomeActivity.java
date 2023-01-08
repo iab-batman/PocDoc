@@ -67,9 +67,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        bottomNavigationView = findViewById(R.id.bottom_navigator);
         pilltimerbtn = findViewById(R.id.pilltimerbtn);
-        bottomNavigationView.setSelectedItemId(R.id.navigation_home);
 
         pilltimerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +77,8 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        bottomNavigationView = findViewById(R.id.bottom_navigator);
+        bottomNavigationView.setSelectedItemId(R.id.navigation_home);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -87,7 +87,7 @@ public class HomeActivity extends AppCompatActivity {
                     case R.id.navigation_home:
                         return true;
                     case R.id.navigation_pill_timer:
-                        startActivity(new Intent(getApplicationContext(),Add.class));
+                        startActivity(new Intent(getApplicationContext(),AlarmActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_covid_tracker:
@@ -95,7 +95,7 @@ public class HomeActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_nurse_bot:
-                        startActivity(new Intent(getApplicationContext(),Nurse_bot.class));
+                        startActivity(new Intent(getApplicationContext(),Add.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_account:

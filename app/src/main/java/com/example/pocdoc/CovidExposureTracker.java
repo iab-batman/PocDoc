@@ -3,7 +3,6 @@ package com.example.pocdoc;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-
 import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -12,11 +11,16 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.onesignal.OneSignal;
+
 public class CovidExposureTracker extends AppCompatActivity {
 
     private static int MY_FINE_LOCATION_REQUEST = 99;
@@ -25,6 +29,7 @@ public class CovidExposureTracker extends AppCompatActivity {
     LocationService mLocationService = new LocationService();
     Intent mServiceIntent;
 
+    BottomNavigationView bottomNavigationView;
     Button startServiceBtn, stopServiceBtn;
 
     @Override
@@ -34,6 +39,42 @@ public class CovidExposureTracker extends AppCompatActivity {
 
         startServiceBtn = findViewById(R.id.start_service_btn);
         stopServiceBtn = findViewById(R.id.stop_service_btn);
+
+
+        bottomNavigationView = findViewById(R.id.bottom_navigator);
+        bottomNavigationView.setSelectedItemId(R.id.navigation_home);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()) {
+                    case R.id.navigation_home:
+                        return true;
+                    case R.id.navigation_pill_timer:
+                        startActivity(new Intent(getApplicationContext(),AlarmActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.navigation_covid_tracker:
+                        /*startActivity(new Intent(getApplicationContext(),CovidExposureTracker.class));
+                        overridePendingTransition(0,0);*/
+                        return true;
+                    case R.id.navigation_nurse_bot:
+                        startActivity(new Intent(getApplicationContext(),Add.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.navigation_account:
+                        startActivity(new Intent(getApplicationContext(),AccountActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                }
+                return false;
+            }
+
+
+        });
+
+
 
         /**************/
 
